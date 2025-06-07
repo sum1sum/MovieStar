@@ -25,6 +25,7 @@ const App = () => {
     const [movieList, setMovieList] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [debouncedSearchTerm, setDebouncedSearchTerm] = useState('');
+    const [trendingMovies, setTrendingMovies] = useState([]);
 
     useDebounce(()=> setDebouncedSearchTerm(searchTerm), 500, [searchTerm])
 
