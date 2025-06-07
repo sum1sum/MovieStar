@@ -1,28 +1,22 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react'
+import Search from './components/Search.jsx'
+import {useState} from 'react'
 
-const Card = ({ title }) =>{
-    return (
-        <div style={{
-            border: '1px solid #4b5362',
-            padding: '20px',
-            backgroundColor: '#31363f',
-            borderRadius: '10px',
-            minHeight: '100px',
-        }}>
-            <h2>{title}</h2>
-        </div>
-    )
-}
 const App = () => {
+    const [searchTerm, setSearchTerm] =useState('');
     return (
-        <div className="card-container">
-            <Card title="Star Wars" rating={5} isCool={true}/>
-            <Card title="Avatar"/>
-            <Card title="The Lion King"/>
-        </div>
+        <main>
+            <div className='pattern'/>
+
+            <div className='wrapper'>
+                <header>
+                    <img src= "/hero.png" alt="Hero Banner"/>
+                    <h1>Find <span className="text-gradient">Movies</span> You'll Enjoy Without the Hassle.</h1>
+                </header>
+
+                <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
+            </div>
+        </main>
     )
 }
 export default App
